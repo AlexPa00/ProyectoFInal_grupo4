@@ -28,6 +28,8 @@ render() {
       <Header/>
       <Tablero
       baraja={this.state.baraja}
+      parejaSeleccionada = {this.state.parejaSeleccionada} //esta siendo comparada, entonces se voltea para ver la carta seleccionada
+      seleccionarCarta = {(carta) => this.seleccionarCarta(carta)} // sirve para hacer referencia de la carta seleccionada al voltearla
       />
     </div>
   );
@@ -44,8 +46,16 @@ seleccionarCarta(carta)
   {
     return; //Si alguna de estas 3 condiciones fueran ciertas , retornara.
   }
+
+  const parejaSeleccionada = [...this.state.parejaSeleccionada,carta]; //actualizamos el arrays de las parejas seleccionadas
+  this.setState({
+    parejaSeleccionada  //actualizamos el estado que serai la propiedad parejaseleccionada
+  })
+} 
+
 }
+
 }
 
 
-export default GameMemory;
+export default GameMemory; 
