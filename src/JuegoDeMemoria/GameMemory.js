@@ -73,11 +73,21 @@ compararPareja(parejaSeleccionada){
       });
     }
 
+    this.verificarSiHayGanador(baraja);
     this.setState({
       parejaSeleccionada : [], // se actualiza el estado del tablero
       baraja // si la carta no fue adivinada no ocurre modificacion dentro de la baraja
     })
   },1000)  //realiza un delay de 1 segundo, revisa si nos ean se voltea nuevamente y si son correctas no se voltean
+}
+
+
+verificarSiHayGanador(baraja){
+  baraja.forEach((carta) => carta.fueAdivinada = true); //para verificar si nuestro metodo funciona "borrar despues"
+  if(baraja.filter((carta) => !carta.fueAdivinada).length === 0) //Si el filtro detecta que todas las cartas fueron adivinadas significa que el usuario gano
+  {
+    alert("Ganaste en 26 intentos!");
+  }
 }
 }
 
