@@ -1,7 +1,8 @@
 
 import React, {Component} from 'react';
+import ReactCardFlip from 'react-card-flip';
 import './Carta.css';
-import FlipCard from 'react-card-flip';
+
 
 export default class Carta extends Component {
   render() {
@@ -9,7 +10,7 @@ export default class Carta extends Component {
 
     //Una vez que el usuario haga click , se invocara al metodo seleccionarCarta
       <div className="carta" onClick={this.props.seleccionarCarta}>
-        <FlipCard
+        <ReactCardFlip
           flipped={this.props.estaSiendoComparada || this.props.fueAdivinada} //Si la carta esta volteada y el usuario esta buscando su par o si ya la adivino, entonces la dejamos volteada.
           disabled={true} //Esto desabilita que la carta se voltee cuando el puntero pase por encima de ella , por lo tanto la carta solo se volteara si hacemos click en ella.
         >
@@ -17,7 +18,7 @@ export default class Carta extends Component {
           <div className="contenido">
             <i className={`fa ${this.props.icono} fa-5x`}></i>
           </div>
-        </FlipCard>
+        </ReactCardFlip>
       </div>
     )
   }  

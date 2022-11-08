@@ -10,7 +10,8 @@ const getEstadoInicial = ()=> {
   return{
     baraja,//Propiedad de las parejas de cartas que se estan comparando
     parejaSeleccionada: [], //Este es un array que puede contener un maximo de 2 elementos, ya que podemos comparar dos cartas a la vez.
-    estaComparando: false //Declaramos un boolean para que una vez que el usuario elija 2 cartas esta se vuelva "verdadero" mientras que la aplicacion calcula si ambas son iguales.(ya que no se quiere que el usuario pueda seguir eligiendo mientras se esta comparando)
+    estaComparando: false, //Declaramos un boolean para que una vez que el usuario elija 2 cartas esta se vuelva "verdadero" mientras que la aplicacion calcula si ambas son iguales.(ya que no se quiere que el usuario pueda seguir eligiendo mientras se esta comparando)
+    numeroDeIntentos: 0
   };
 }
 
@@ -24,7 +25,10 @@ class GameMemory extends Component {
 render() {
   return (
     <div className="App">
-      <Header/>
+      <Header
+       numeroDeIntentos={this.state.numeroDeIntentos}
+       resetearPartida={() => this.resetearPartida()}
+      />
       <Tablero
       baraja={this.state.baraja}
       parejaSeleccionada = {this.state.parejaSeleccionada} //esta siendo comparada, entonces se voltea para ver la carta seleccionada
@@ -75,7 +79,9 @@ compararPareja(parejaSeleccionada){
     this.verificarSiHayGanador(baraja);
     this.setState({
       parejaSeleccionada : [], // se actualiza el estado del tablero
-      baraja // si la carta no fue adivinada no ocurre modificacion dentro de la baraja
+      baraja, // si la carta no fue adivinada no ocurre modificacion dentro de la baraja
+      estaComparando: false,
+      numeroDeIntentos: this.state.numeroDeIntentos + 1
     })
   },1000)  //realiza un delay de 1 segundo, revisa si nos ean se voltea nuevamente y si son correctas no se voltean
 }
@@ -85,8 +91,13 @@ verificarSiHayGanador(baraja){
   baraja.forEach((carta) => carta.fueAdivinada = true); //para verificar si nuestro metodo funciona "borrar despues"
   if(baraja.filter((carta) => !carta.fueAdivinada).length === 0) //Si el filtro detecta que todas las cartas fueron adivinadas significa que el usuario gano
   {
-    alert("Ganaste en 26 intentos!");
+    alert(`Ganaste en ${this.state.numeroDeIntentos} intentos!`);
   }
+}
+resetearPartida() {
+  this.setState(
+    getEstadoInicial()
+  );
 }
 }
 
