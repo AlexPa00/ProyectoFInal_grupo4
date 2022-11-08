@@ -8,8 +8,7 @@ import ConstruirBaraja from './utils/ConstruirBaraja';
 const getEstadoInicial = ()=> {
   const baraja = ConstruirBaraja();
   return{
-    baraja,
-    //Propiedad de las parejas de cartas que se estan comparando
+    baraja,//Propiedad de las parejas de cartas que se estan comparando
     parejaSeleccionada: [], //Este es un array que puede contener un maximo de 2 elementos, ya que podemos comparar dos cartas a la vez.
     estaComparando: false //Declaramos un boolean para que una vez que el usuario elija 2 cartas esta se vuelva "verdadero" mientras que la aplicacion calcula si ambas son iguales.(ya que no se quiere que el usuario pueda seguir eligiendo mientras se esta comparando)
   };
