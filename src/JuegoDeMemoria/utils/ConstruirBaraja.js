@@ -16,4 +16,5 @@ while(cartas.length<NUMERO_DE_CARTAS){
     cartas.push({...carta});
 }
 return shuffle(cartas) ;
+
 }
