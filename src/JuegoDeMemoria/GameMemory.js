@@ -79,6 +79,7 @@ compararPareja(parejaSeleccionada){
     })
   },1000)  //realiza un delay de 1 segundo, revisa si nos ean se voltea nuevamente y si son correctas no se voltean
 }
+}
 
 
 
