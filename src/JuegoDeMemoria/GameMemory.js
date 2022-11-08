@@ -55,7 +55,5 @@ seleccionarCarta(carta)
 
 }
 
-}
-
 
 export default GameMemory; 
