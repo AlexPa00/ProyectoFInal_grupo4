@@ -50,12 +50,39 @@ seleccionarCarta(carta)
   const parejaSeleccionada = [...this.state.parejaSeleccionada,carta]; //actualizamos el arrays de las parejas seleccionadas
   this.setState({
     parejaSeleccionada  //actualizamos el estado que serai la propiedad parejaseleccionada
-  })
+  });
+
+    if(parejaSeleccionada.length === 2){
+      this.compararPareja(parejaSeleccionada) //si el usuario escojio 2 cartas y son iguales 
+    }
 } 
+compararPareja(parejaSeleccionada){
+  this.setState({estaComparando: true}); //con esto estamos evitando que el usuario agregue mas de dos cartas
 
+  setTimeout(() => {  
+    const[primeraCarta,segundoCarta] = parejaSeleccionada; // seleccionamos la primera carta y la segunda carta
+    let baraja = this.state.baraja;
+
+    if(primeraCarta.icono === segundoCarta.icono){ //si encontro el par de la carta 
+      baraja = baraja.map((carta) => {
+        if(carta.icono !== primeraCarta.icono){ //si la carta de la mesa es distinto con la otra carta reentorno la carta
+          return carta;
+        }
+
+         return {...carta, fueAdivinada:true} // si las cartas son iguales reentornamos la cartas y actualizamos la propiedad fueadivinada
+      });
+    }
+
+    this.setState({
+      parejaSeleccionada : [], // se actualiza el estado del tablero
+      baraja // si la carta no fue adivinada no ocurre modificacion dentro de la baraja
+    })
+  },1000)  //realiza un delay de 1 segundo, revisa si nos ean se voltea nuevamente y si son correctas no se voltean
 }
 
 }
+
+
 
 
 export default GameMemory; 
