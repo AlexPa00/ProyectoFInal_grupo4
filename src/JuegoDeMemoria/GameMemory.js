@@ -88,12 +88,13 @@ compararPareja(parejaSeleccionada){
 
 
 verificarSiHayGanador(baraja){
-  baraja.forEach((carta) => carta.fueAdivinada = true); //para verificar si nuestro metodo funciona "borrar despues"
+  //baraja.forEach((carta) => carta.fueAdivinada = true); //para verificar si nuestro metodo funciona "borrar despues"
   if(baraja.filter((carta) => !carta.fueAdivinada).length === 0) //Si el filtro detecta que todas las cartas fueron adivinadas significa que el usuario gano
   {
     alert(`Ganaste en ${this.state.numeroDeIntentos} intentos!`);
   }
 }
+
 resetearPartida() {
   this.setState(
     getEstadoInicial()
@@ -104,4 +105,4 @@ resetearPartida() {
 
 
 
-export default GameMemory; 
+export default GameMemory;
