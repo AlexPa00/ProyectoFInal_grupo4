@@ -1,4 +1,4 @@
-import react, {Component} from "react";
+import React, {Component} from "react";
 import "./Header.css";
 
 export default class Header extends Component{
@@ -12,7 +12,8 @@ export default class Header extends Component{
                     </button>
                 </div>
                 <div className="titulo">
-                    Intento:{this.props.numeroDeIntentos}
+                 Intento: {this.props.numeroDeIntentos}
+
                 </div>
             </header>
         )

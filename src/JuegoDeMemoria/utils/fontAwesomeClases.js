@@ -1,5 +1,5 @@
-export default () => [
-    "fa-adjust", "fa-adn", "fa-align-center", "fa-align-justify", "fa-align-left",
+// eslint-disable-next-line import/no-anonymous-default-export
+export default () => ["fa-adjust", "fa-adn", "fa-align-center", "fa-align-justify", "fa-align-left",
     "fa-align-right", "fa-ambulance", "fa-anchor", "fa-android", "fa-angellist",
     "fa-angle-double-down", "fa-angle-double-left", "fa-angle-double-right",
     "fa-angle-double-up", "fa-angle-down", "fa-angle-left", "fa-angle-right",
