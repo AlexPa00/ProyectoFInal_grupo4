@@ -1,0 +1,44 @@
+[
+    {
+        "foto": "../img/she.png",
+        "nombre": "Reina Nerea",
+        "legajo": " TUV000423",
+        "correo": "reinanerea85@gmail.com",
+        "github": "Reina-Nerea"
+    },
+    {
+        "foto": "../img/she.png",
+        "nombre": " Reina Casandra ",
+        "legajo": " TUV000449 ",
+        "correo": "casandramailen.0010@gmail.com ",
+        "github": "CasandraReina"
+    },
+    {
+        "foto": "../img/he.png",
+        "nombre": " Pacheco Alexis",
+        "legajo": " TUV000456",
+        "correo": "nuve98@gmail.com ",
+        "github": "AlexPa00.   "
+    },
+    {
+        "foto": "../img/he.png",
+        "nombre": " Velazques Augusto",
+        "legajo": " TUV000267",
+        "correo": "augustosalvadorvelazquez@gmail.com",
+        "github": "salvavelazquez"
+    },
+    {
+        "foto": "../img/he.png",
+        "nombre": " Fines Rodrigo",
+        "legajo": " TUV000324 ",
+        "correo": "Fines.rodrigoo@gmail.com",
+        "github": "Rodrigooo08"
+    },
+    {
+        "foto": "../img/he.png",
+        "nombre": " Quispe Gutierrez Josue ",
+        "legajo": "TUV000285 ",
+        "correo": "josue.gutierrez.i98@gmail.com",
+        "github": "josue008"
+    }
+]

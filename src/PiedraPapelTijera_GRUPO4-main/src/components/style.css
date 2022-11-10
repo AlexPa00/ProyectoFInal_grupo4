@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+}
+ h1{ /* centra y cambia el tamaño de los titulos de cada pagina*/
+
+    color: wheat;
+    font-size: 200px;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+
+}
+.container{
+    position: relative;
+    width: 100px; 
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    padding: 0px; /*distancia de os cuadros con el resto*/
+    margin: 50px; 
+}
+
+.container .card{
+    position: relative;
+    max-width: 370px; /*ancho de cada cuadro*/
+    height: 355px; /*alto de cada cuadro*/
+    background: #fff; /*color de cada cuadro*/
+    margin: 25px 25px; /* distancia enrte cada cuadro*/
+    padding: 10px 15px; /*distancia entre imagen y borde de cuadro*/
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+}
+.container .card:hover{
+    height: 530px; /*cuanto baja cada cuadro*/
+}
+
+
+.container .card .content{
+    position: relative;
+    margin-top: -200px; 
+    padding: 40px 0px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out; /*velocidad de muestra de informacion*/
+}
+.container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -25px; /*altura de informacion*/
+    transition-delay: 0.5s;
+
+}
