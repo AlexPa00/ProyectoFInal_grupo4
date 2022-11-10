@@ -1,6 +1,6 @@
-import Image from './components/image';
-import Palabra from './components/palabra';
-import DATA from './shared/data';
+import Image from '../components/image';
+import Palabra from '../components/palabra';
+import DATA from '../shared/data';
 import React, { Component } from 'react';
 import styled from 'styled-components';  
 

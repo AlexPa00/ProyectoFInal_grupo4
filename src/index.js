@@ -5,6 +5,9 @@ import App from "./App";
 import reportWebVitals from './reportWebVitals';
 import GameMemory from './JuegoDeMemoria/GameMemory';//juego
 import "font-awesome/css/font-awesome.css"//iconosdecartas
+//instalar 
+//npm install font-awesome
+//npm install lodash.shuffle
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
