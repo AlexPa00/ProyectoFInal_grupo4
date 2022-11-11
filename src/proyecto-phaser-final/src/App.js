@@ -34,7 +34,7 @@ function App(){
     const minEatCat = 2;
     const maxEatCat = 4;
     const velocidadEat = 4;
-    const TimeReturnEat = 300;
+    const TimeReturnEat = 650;
 
     function preload(){
         //realizo una carga de imagenes para usarlo despues
