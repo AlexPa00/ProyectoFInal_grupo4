@@ -19,7 +19,8 @@ function App(){
       update:update,
       extend: {
         generateEat:generateEat,
-        colisionCatComida:colisionCatComida
+        colisionCatComida:colisionCatComida,
+        colisionCatBomb:colisionCatBomb
       }
     }
   };  
@@ -28,6 +29,7 @@ function App(){
   
   var cat;
   var eat;
+  var bombBomb;
 
   //Agregacion de constantes
     
@@ -35,13 +37,15 @@ function App(){
     const minEatCat = 2;
     const maxEatCat = 4;
     const velocidadEat = 4;
-    const TimeReturnEat = 650;
+    const TimeReturnEat = 600;
+    const probabilityBomb = 50; //Probabilidad de que aparezca una bomba del 50%
 
     function preload(){
         //realizo una carga de imagenes para usarlo despues
         this.load.image('city','images/City.png');
         this.load.atlas("cat","/images/gatos.png","/images/sprites.json");
-        this.load.spritesheet("eat","/images/EatCat1.png",{frameWidth: 63.57,frameHeigth: 68});
+        this.load.spritesheet("eat","/images/EatCatCat1.png",{frameWidth: 45.25,frameHeigth: 47});
+        this.load.image('bomb','images/bomb.png');
     }
 
  function create(){
@@ -64,53 +68,71 @@ function App(){
        this.left = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
 
 
+
         eat = this.physics.add.group({ //Creamos un nuevo grupo
         defaultKey: 'eat', //Carga del sprite de comida
         frame: 0, //El numero de frame 
-        maxSize:60 //Cantidad de comida que podran almacenarse al mismo tiempo
-
+        maxSize:100 //Cantidad de comida que podran almacenarse al mismo tiempo
        });
+
+       bombBomb = this.physics.add.group({ //Creamos un nuevo grupo
+        defaultKey: 'bomb', //Carga de la imagen de la bomba
+        maxSize:50 //Cantidad de bombas que podran almacenarse al mismo tiempo
+       });
+
+
 
        //Aparicion de la comida
 
        this.time.addEvent({
-        delay: TimeReturnEat, //Apareceran cada 300 mls
+        delay: TimeReturnEat, //Apareceran cada 600 mls
         loop: true, //Lo colocamos en verdadero para que se repita
         callback: () =>{ this.generateEat()} //Evento que hara , es generar la comida
        });
 
        //Colision de Cat y comida
-
        this.physics.add.collider(cat,eat,this.colisionCatComida,null,this);
+
+       //Colision de Cat y bomba
+       this.physics.add.collider(cat,bombBomb,this.colisionCatBomb,null,this);
 
 
     } 
      function update(){
 
       cat.setVelocityX(0);
-     
+  
+        
       if(/*this.cursors.left*/this.left.isDown){
+
        cat.anims.play('walk');
-       cat.setVelocityX(- velocityCat);
-      }else if(this.right.isDown){
-        cat.anims.play('walk');
-        cat.setVelocityX(+ velocityCat)
-      }
+        cat.setVelocityX(- velocityCat);
+        //cat.anims.play('walk');
+       } else if(this.right.isDown){
+         cat.setVelocityX(- velocityCat);
+         //cat.anims.play('walk');
+       }
 
-        //Caida de Comida
 
-        Phaser.Actions.IncY(eat.getChildren(),velocidadEat);
+ //Caida de Comida
 
-        //Retorno de la comida una vez que llego a la base del juego
+ Phaser.Actions.IncY(eat.getChildren(),velocidadEat);
 
- 
-        /*eat.children.iterate(function (eat) {
-        if (eat.y > 550) {
-          eat.killAndHide(eat);
-        }
-    });*/
+ //Caida de Bomba
+ Phaser.Actions.IncY(bombBomb.getChildren(),velocidadEat);
 
-            }
+ //Retorno de la comida una vez que llego a la base del juego
+
+
+ /*eat.children.iterate(function (eat) {
+ if (eat.y > 550) {
+   eat.killAndHide(eat);
+ }
+});*/
+
+     
+}
+            
             
        // -- CREACION DE COMIDA --
 
@@ -122,7 +144,7 @@ function App(){
  
          if(eatCat){ //Si la comida esta disponible...
            eatCat.setActive(true).setVisible(true); //Las activamos y mostramos
-           eatCat.setFrame(Phaser.Math.Between(0,6)); //A la comida le asignaremos un frame aleatorio entre 0 y 6
+           eatCat.setFrame(Phaser.Math.Between(0,8)); //A la comida le asignaremos un frame aleatorio entre 0 y 8
            eatCat.y = -100; //Ubicacion en y
            eatCat.x = Phaser.Math.Between(0,game.config.width); //Ubicacion en x aleatoria entre 0 y el ancho del juego
            
@@ -132,16 +154,44 @@ function App(){
          }
         }
 
+        // -- CREACION DE BOMBA --
+
+        var numberProbability =  Phaser.Math.Between(2,70);
+        if (numberProbability <= probabilityBomb) {
+          var verBomba = bombBomb.get();
+          if (verBomba) {
+            verBomba.setActive(true).setVisible(true);
+            verBomba.y = -100;
+            verBomba.x = Phaser.Math.Between(0,game.config.width);
+
+            this.physics.add.overlap(verBomba,eat,(bombEnColision) => { //Si detecta que una comida esta colisionando con otra ya existente , haremos que la comida que colisiona se vuelva a otra posicion en x hasta que no colisione con otra.
+              bombEnColision.x = Phaser.Math.Between(0,game.config.width);
+            });
+          }
+
+          
+        }
+
       }
 
-      //Colision
+      //Colision de la comida con el gato
 
       function colisionCatComida(cat,eatCat){
         eat.killAndHide(eatCat);
         eatCat.setActive(false);
         eatCat.setVisible(false);
       }
-          } 
+
+      //Colision de la bomba con el gato
+
+
+      function colisionCatBomb(cat,verBomba){
+        bombBomb.killAndHide(verBomba);
+        verBomba.setActive(false);
+        verBomba.setVisible(false);
+      }
+    }
+        
     
 
 
