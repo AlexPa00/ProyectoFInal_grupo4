@@ -116,7 +116,7 @@ function App(){
  
          if(eatCat){ //Si la comida esta disponible...
            eatCat.setActive(true).setVisible(true); //Las activamos y mostramos
-           eatCat.setFrame(Phaser.Math.Between(0,1,2,3,4,5,6)); //A la comida le asignaremos un frame aleatorio entre 0 y 6
+           eatCat.setFrame(Phaser.Math.Between(0,6)); //A la comida le asignaremos un frame aleatorio entre 0 y 6
            eatCat.y = -100; //Ubicacion en y
            eatCat.x = Phaser.Math.Between(0,game.config.width); //Ubicacion en x aleatoria entre 0 y el ancho del juego
            
