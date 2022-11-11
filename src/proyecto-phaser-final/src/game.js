@@ -1,11 +1,14 @@
-import Phaser from "phaser";
+/*import Phaser from "phaser";
 
 export class Game extends Phaser.Scene{
     constructor(){
         super({key:'game'});        
     }
 
-
+function game(){
+    var cat;
+    
+}
     preload(){
         //realizo una carga de imagenes para usarlo despues
         this.load.image('city','images/City.png');
@@ -29,10 +32,16 @@ export class Game extends Phaser.Scene{
 
     } 
      update(){
-            
+           
 
-          }
+
+            }
+        }
+          
+
+
+
+
+    }
 }
-
-
-
+*/
