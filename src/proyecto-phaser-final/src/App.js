@@ -54,6 +54,8 @@ function App(){
         //agrega colisiones a los bordes del juego
         this.physics.world.setBoundsCollision(true,true,true,false);
 
+        //CREACION DE LAS IMAGENES Y CREACION DE ANIMACIONES
+
         //Muestro las imagenes en la pantalla
         this.add.image(300,240 ,'city');
         // genera la animacion del jugador mediante una matriz
@@ -61,29 +63,37 @@ function App(){
         frames: this.anims.generateFrameNames('cat',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cat
         { prefix: 'walk', end: 7}), //vendria siendo como una cadena
         repeat: -1}); // se repite indefinidamente
+
+        // genera la animacion del jugador mediante una matriz
         this.anims.create({key: 'idle' ,  
         frames: this.anims.generateFrameNames('cats',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cats
         { prefix: 'idle', end: 4}), //vendria siendo como una cadena
-        repeat: -1}); // se repite indefinidamente
-         // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
-       cat = this.physics.add.sprite(300,450,'cat',); // agrego fisicas al componente cat
-       // agrego colisiones al sprite 
+        repeat: -1}); // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
+       
+        // agrego fisicas al componente cat
+        cat = this.physics.add.sprite(300,450,'cat',); 
+        
+        // agrego colisiones al sprite 
        this.physics.add.collider(cat);
+
         //realizamos la colisiones con el mundo;
         cat.setCollideWorldBounds(true);
-       // this.cursors = this.input.keyboard.createCursorKeys();
+      
+        //creamos las asignaciones de la teclas
        this.right = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
        this.left = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
 
 
 
-        eat = this.physics.add.group({ //Creamos un nuevo grupo
+       //Creamos un nuevo grupo
+        eat = this.physics.add.group({ 
         defaultKey: 'eat', //Carga del sprite de comida
         frame: 0, //El numero de frame 
         maxSize:100 //Cantidad de comida que podran almacenarse al mismo tiempo
        });
 
-       bombBomb = this.physics.add.group({ //Creamos un nuevo grupo
+       //Creamos un nuevo grupo
+       bombBomb = this.physics.add.group({ 
         defaultKey: 'bomb', //Carga de la imagen de la bomba
         maxSize:50 //Cantidad de bombas que podran almacenarse al mismo tiempo
        });
@@ -109,20 +119,20 @@ function App(){
      function update(){
        
       if(/*this.cursors.left*/this.left.isDown){
-       cat.flipX = -1; //volteo al sprite cat
-        cat.setVelocityX(- velocityCat); //toma una velocidad que esta comprendida en la variable
-        
-        cat.anims.play('walk',true); // una vez que entre en la condicional iniciamos la animacion walk
-
-        
-       } else if(this.right.isDown){
+           cat.flipX = -1; //volteo al sprite cat
+           cat.setVelocityX(- velocityCat); //toma una velocidad que esta comprendida en la variable
+           cat.anims.play('walk',true); // una vez que entre en la condicional iniciamos la animacion walk
+            } 
+            
+            
+      else if(this.right.isDown){
          cat.scaleX = 1; //volteo al sprite cat
-         cat.setVelocityX(+ velocityCat); // toma la velocidad que esta comprendida dentro de la variable
-        
+         cat.setVelocityX(+ velocityCat); // toma la velocidad que esta comprendida dentro de la variable        
          cat.anims.play('walk',true); // una vez que entre en la condicional iniciamos la animacion walk
        }
-       else{
-        cat.setVelocityX(0);
+
+      else{
+        cat.setVelocityX(0); //la velocidad se convierte en nula o cero
         cat.anims.play('idle',true); // i no entra en ninguna condicional iniciamos la animacion idle
         cat.flipX = 0;
        }
