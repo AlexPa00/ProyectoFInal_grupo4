@@ -1,4 +1,3 @@
-
 import Phaser from "phaser";
 //import { Game } from "./game";
 
@@ -46,9 +45,8 @@ function App(){
         { prefix: 'walk', end: 8}), //vendria siendo como una cadena
         repeat: -1});
          // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
-       cat = this.physics.add.sprite(100,200,'cat');
+       cat = this.physics.add.sprite(100,200,'cat',); // agrego fisicas al 
         this.physics.add.collider(cat);
-        this.anims.framesRate = 10;
         this.cursors = this.input.keyboard.createCursorKeys();
 
     } 
