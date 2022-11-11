@@ -7,7 +7,7 @@ function App(){
     type: Phaser.AUTO,
     width: 600,
     height: 480,
-    scene:[Game],    
+    scene:[Game],   
     physics: {
         default: 'arcade',
         arcade: {
@@ -15,11 +15,14 @@ function App(){
         }
     }
   }
-
-var game = new Phaser.Game(config);
-
+  
 
 
+  var game = new Phaser.Game(config);
+  
 
 }
+
+
+
 export default App;
