@@ -33,7 +33,7 @@ function App(){
 
   //Agregacion de constantes
     
-    const velocityCat = 50;
+    const velocityCat = 75;
     const minEatCat = 2;
     const maxEatCat = 4;
     const velocidadEat = 4;
@@ -46,6 +46,7 @@ function App(){
         this.load.atlas("cat","/images/gatos.png","/images/sprites.json");
         this.load.spritesheet("eat","/images/EatCatCat1.png",{frameWidth: 45.25,frameHeigth: 47});
         this.load.image('bomb','images/bomb.png');
+        this.load.atlas('cats','/images/idle1.png','/images/idlesprites.json');
     }
 
  function create(){
@@ -58,10 +59,14 @@ function App(){
         // genera la animacion del jugador mediante una matriz
       this.anims.create({key: 'walk' ,  
         frames: this.anims.generateFrameNames('cat',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cat
-        { prefix: 'walk', end: 8}), //vendria siendo como una cadena
+        { prefix: 'walk', end: 7}), //vendria siendo como una cadena
+        repeat: -1});
+        this.anims.create({key: 'idle' ,  
+        frames: this.anims.generateFrameNames('cats',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cat
+        { prefix: 'idle', end: 4}), //vendria siendo como una cadena
         repeat: -1});
          // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
-       cat = this.physics.add.sprite(300,450,'cat',); // agrego fisicas al 
+       cat = this.physics.add.sprite(300,450,'cat',); // agrego fisicas al componente cat
         this.physics.add.collider(cat);
        // this.cursors = this.input.keyboard.createCursorKeys();
        this.right = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
@@ -104,13 +109,21 @@ function App(){
   
         
       if(/*this.cursors.left*/this.left.isDown){
-
-       cat.anims.play('walk');
+       cat.flipX = -1;
         cat.setVelocityX(- velocityCat);
-        //cat.anims.play('walk');
+        
+        cat.anims.play('walk',true);
+
+        
        } else if(this.right.isDown){
-         cat.setVelocityX(- velocityCat);
-         //cat.anims.play('walk');
+         cat.scaleX = 1;
+         cat.setVelocityX(+ velocityCat);
+        
+         cat.anims.play('walk',true);
+       }
+       else{
+        cat.anims.play('idle',true);
+        cat.flipX = 0;
        }
 
 
@@ -144,7 +157,7 @@ function App(){
  
          if(eatCat){ //Si la comida esta disponible...
            eatCat.setActive(true).setVisible(true); //Las activamos y mostramos
-           eatCat.setFrame(Phaser.Math.Between(0,8)); //A la comida le asignaremos un frame aleatorio entre 0 y 8
+           eatCat.setFrame(Phaser.Math.Between(0,7)); //A la comida le asignaremos un frame aleatorio entre 0 y 8
            eatCat.y = -100; //Ubicacion en y
            eatCat.x = Phaser.Math.Between(0,game.config.width); //Ubicacion en x aleatoria entre 0 y el ancho del juego
            
