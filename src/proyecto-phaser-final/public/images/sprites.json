@@ -1,4 +1,1 @@
-[{"name":"sprite000","x":11,"y":4,"width":28,"height":42},
-{"name":"sprite001","x":51,"y":4,"width":28,"height":42},
-{"name":"sprite002","x":93,"y":4,"width":28,"height":42},
-{"name":"sprite003","x":135,"y":4,"width":28,"height":42}]
+{"frames":{"walk0":{"frame":{"x":11,"y":4,"w":28,"h":42},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":28,"h":42},"sourceSize":{"w":28,"h":42}},"walk1":{"frame":{"x":51,"y":4,"w":28,"h":42},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":28,"h":42},"sourceSize":{"w":28,"h":42}},"walk2":{"frame":{"x":93,"y":4,"w":28,"h":42},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":28,"h":42},"sourceSize":{"w":28,"h":42}},"walk3":{"frame":{"x":135,"y":4,"w":28,"h":42},"rotated":false,"trimmed":false,"spriteSourceSize":{"x":0,"y":0,"w":28,"h":42},"sourceSize":{"w":28,"h":42}}},"meta":{"app":"https://www.leshylabs.com/apps/sstool/","version":"Leshy SpriteSheet Tool v0.8.4","image":".png","size":{"w":170,"h":50},"scale":1}}
