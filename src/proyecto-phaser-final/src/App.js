@@ -56,7 +56,7 @@ function App(){
         { prefix: 'walk', end: 8}), //vendria siendo como una cadena
         repeat: -1});
          // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
-       cat = this.physics.add.sprite(100,200,'cat',); // agrego fisicas al 
+       cat = this.physics.add.sprite(300,450,'cat',); // agrego fisicas al 
         this.physics.add.collider(cat);
        // this.cursors = this.input.keyboard.createCursorKeys();
        this.right = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
