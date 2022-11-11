@@ -103,11 +103,12 @@ function App(){
 
         //Retorno de la comida una vez que llego a la base del juego
 
+ 
         /*eat.children.iterate(function (eat) {
-          if(eat.y > 550){
-            eat.killAndHide(eat);
-          }
-        });*/
+        if (eat.y > 550) {
+          eat.killAndHide(eat);
+        }
+    });*/
 
             }
             
@@ -136,9 +137,9 @@ function App(){
       //Colision
 
       function colisionCatComida(cat,eatCat){
-        eatCat.killAndHile(eat);
-        eat.setActive(false);
-        eat.setVisible(false);
+        eat.killAndHide(eatCat);
+        eatCat.setActive(false);
+        eatCat.setVisible(false);
       }
           } 
     
