@@ -90,11 +90,11 @@ function App(){
       cat.setVelocityX(0);
      
       if(/*this.cursors.left*/this.left.isDown){
-       cat.setVelocityX(- velocityCat);
        cat.anims.play('walk');
+       cat.setVelocityX(- velocityCat);
       }else if(this.right.isDown){
-        cat.setVelocityX(- velocityCat);
         cat.anims.play('walk');
+        cat.setVelocityX(+ velocityCat)
       }
 
         //Caida de Comida
