@@ -60,14 +60,17 @@ function App(){
       this.anims.create({key: 'walk' ,  
         frames: this.anims.generateFrameNames('cat',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cat
         { prefix: 'walk', end: 7}), //vendria siendo como una cadena
-        repeat: -1});
+        repeat: -1}); // se repite indefinidamente
         this.anims.create({key: 'idle' ,  
-        frames: this.anims.generateFrameNames('cats',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cat
+        frames: this.anims.generateFrameNames('cats',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cats
         { prefix: 'idle', end: 4}), //vendria siendo como una cadena
-        repeat: -1});
+        repeat: -1}); // se repite indefinidamente
          // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
        cat = this.physics.add.sprite(300,450,'cat',); // agrego fisicas al componente cat
-        this.physics.add.collider(cat);
+       // agrego colisiones al sprite 
+       this.physics.add.collider(cat);
+        //realizamos la colisiones con el mundo;
+        cat.setCollideWorldBounds(true);
        // this.cursors = this.input.keyboard.createCursorKeys();
        this.right = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
        this.left = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
@@ -104,25 +107,23 @@ function App(){
 
     } 
      function update(){
-
-      cat.setVelocityX(0);
-  
-        
+       
       if(/*this.cursors.left*/this.left.isDown){
-       cat.flipX = -1;
-        cat.setVelocityX(- velocityCat);
+       cat.flipX = -1; //volteo al sprite cat
+        cat.setVelocityX(- velocityCat); //toma una velocidad que esta comprendida en la variable
         
-        cat.anims.play('walk',true);
+        cat.anims.play('walk',true); // una vez que entre en la condicional iniciamos la animacion walk
 
         
        } else if(this.right.isDown){
-         cat.scaleX = 1;
-         cat.setVelocityX(+ velocityCat);
+         cat.scaleX = 1; //volteo al sprite cat
+         cat.setVelocityX(+ velocityCat); // toma la velocidad que esta comprendida dentro de la variable
         
-         cat.anims.play('walk',true);
+         cat.anims.play('walk',true); // una vez que entre en la condicional iniciamos la animacion walk
        }
        else{
-        cat.anims.play('idle',true);
+        cat.setVelocityX(0);
+        cat.anims.play('idle',true); // i no entra en ninguna condicional iniciamos la animacion idle
         cat.flipX = 0;
        }
 
