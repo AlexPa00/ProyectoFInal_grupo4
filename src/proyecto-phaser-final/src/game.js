@@ -24,8 +24,8 @@ export class Game extends Phaser.Scene{
         { prefix: 'walk', end: 3}), //vendria siendo como una cadena
         repeat: -1});
          // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
-        //this.physics.add.sprite(100,200,'cat');
-        //this.physics.add.collider(cat);
+        this.physics.add.sprite(100,200,'cat');
+        this.physics.add.collider(cat);
 
     } 
      update(){
