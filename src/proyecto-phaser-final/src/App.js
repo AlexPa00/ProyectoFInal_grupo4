@@ -7,7 +7,7 @@ function App(){
     type: Phaser.AUTO,
     width: 600,
     height: 480,
-    scene:[Game],   
+    scene:[Game],
     physics: {
         default: 'arcade',
         arcade: {
