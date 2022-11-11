@@ -18,7 +18,8 @@ function App(){
       create:create,
       update:update,
       extend: {
-        generateEat:generateEat
+        generateEat:generateEat,
+        colisionCatComida:colisionCatComida
       }
     }
   };  
@@ -40,7 +41,7 @@ function App(){
         //realizo una carga de imagenes para usarlo despues
         this.load.image('city','images/City.png');
         this.load.atlas("cat","/images/gatos.png","/images/sprites.json");
-        this.load.spritesheet("eat","/images/EatCat1.png",{frameWidth: 63.57,frameHeigth: 64});
+        this.load.spritesheet("eat","/images/EatCat1.png",{frameWidth: 63.57,frameHeigth: 68});
     }
 
  function create(){
@@ -77,6 +78,10 @@ function App(){
         loop: true, //Lo colocamos en verdadero para que se repita
         callback: () =>{ this.generateEat()} //Evento que hara , es generar la comida
        });
+
+       //Colision de Cat y comida
+
+       this.physics.add.collider(cat,eat,this.colisionCatComida,null,this);
 
 
     } 
@@ -126,6 +131,14 @@ function App(){
          }
         }
 
+      }
+
+      //Colision
+
+      function colisionCatComida(cat,eatCat){
+        eatCat.killAndHile(eat);
+        eat.setActive(false);
+        eat.setVisible(false);
       }
           } 
     
