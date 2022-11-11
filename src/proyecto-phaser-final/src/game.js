@@ -6,24 +6,36 @@ export class Game extends Phaser.Scene{
     }
 
 
-    preload(){
+    
+
+    
+preload(){
         //realizo una carga de imagenes para usarlo despues
         this.load.image('city','images/City.png');
-        this.load.spritesheet('cat', 
-        'images/gato.png',
-        { frameWidth: 150, frameHeight: 150 }
-        );
+        this.load.atlas("cat","/images/cats.png","/images/sprites.json");
     }
 
-    create(){
+ create(){
         //agrega colisiones a los bordes del juego
         this.physics.world.setBoundsCollision(true,true,true,false);
 
         //Muestro las imagenes en la pantalla
         this.add.image(300,240 ,'city');
-        this.add.spritesheet(100,100,'cat')
-        //
+        // genera la animacion del jugador mediante una matriz
+       this.anims.create({key: 'sprite' ,  
+        frames: this.anims.generateFrameNames('cat',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cat
+    { prefix: 'sprite', end: 3, zeroPad: 3}), //vendria siendo como una cadena
+        repeat: -1}); // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
+        //this.physics.add.sprite(100,200,'cat');
+        //this.physics.add.collider(cat);
 
+    } 
+     update(){
+            
 
-    }
+          }
+    
 }
+
+
+
