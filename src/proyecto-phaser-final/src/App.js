@@ -33,12 +33,12 @@ function App(){
 
   //Agregacion de constantes
     
-    const velocityCat = 75;
-    const minEatCat = 2;
-    const maxEatCat = 4;
-    const velocidadEat = 4;
-    const TimeReturnEat = 600;
-    const probabilityBomb = 50; //Probabilidad de que aparezca una bomba del 50%
+    var velocityCat = 100;
+    var minEatCat = 2;
+    var maxEatCat = 4;
+    var velocidadEat = 4;
+    var TimeReturnEat = 600;
+    var probabilityBomb = 50; //Probabilidad de que aparezca una bomba del 50%
 
     function preload(){
         //realizo una carga de imagenes para usarlo despues
@@ -69,7 +69,22 @@ function App(){
         frames: this.anims.generateFrameNames('cats',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cats
         { prefix: 'idle', end: 4}), //vendria siendo como una cadena
         repeat: -1}); // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
-       
+
+
+        //CREACION DE VIDA Y PUNTAJE EN EL NIVEL
+
+        this.data.set('lives', 3);
+        this.data.set('level', 1);
+        this.data.set('score', 0);
+        
+        // mostramos los datos en la pantalla mediante un texto
+        var text = this.add.text(10, 10, '', { font: '24px Courier', fill: '#00ff00' });
+
+        text.setText([
+          'Level: ' + this.data.get('level'),
+          'Lives: ' + this.data.get('lives'),
+          'Score: ' + this.data.get('score')
+      ]);
         // agrego fisicas al componente cat
         cat = this.physics.add.sprite(300,450,'cat',); 
         
@@ -93,16 +108,14 @@ function App(){
        });
 
        //Creamos un nuevo grupo
-       bombBomb = this.physics.add.group({ 
+        bombBomb = this.physics.add.group({ 
         defaultKey: 'bomb', //Carga de la imagen de la bomba
         maxSize:50 //Cantidad de bombas que podran almacenarse al mismo tiempo
        });
 
 
-
        //Aparicion de la comida
-
-       this.time.addEvent({
+        this.time.addEvent({
         delay: TimeReturnEat, //Apareceran cada 600 mls
         loop: true, //Lo colocamos en verdadero para que se repita
         callback: () =>{ this.generateEat()} //Evento que hara , es generar la comida
