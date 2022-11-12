@@ -58,7 +58,7 @@ function App(){
         this.load.spritesheet("eat","/images/EatCatCat1.png",{frameWidth: 45.25,frameHeigth: 47});
         this.load.image('bomb','images/bomb.png');
         this.load.atlas('cats','/images/idle1.png','/images/idlesprites.json');
-        this.load.audio('takeEat','/sounds/TakeEat1.mp3');
+        this.load.audio('takeEat','/sounds/Eat1.mp3');
         this.load.audio('noBomb','/sounds/Bomb1.mp3');
     }
 
