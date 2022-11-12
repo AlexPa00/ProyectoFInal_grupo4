@@ -36,6 +36,8 @@ function App(){
   var eat;
   var bombBomb;
   var text;
+  var takeEat;
+  var noBomb;
 
   //Agregacion de constantes
     
@@ -56,6 +58,8 @@ function App(){
         this.load.spritesheet("eat","/images/EatCatCat1.png",{frameWidth: 45.25,frameHeigth: 47});
         this.load.image('bomb','images/bomb.png');
         this.load.atlas('cats','/images/idle1.png','/images/idlesprites.json');
+        this.load.audio('takeEat','/sounds/TakeEat1.mp3');
+        this.load.audio('noBomb','/sounds/Bomb1.mp3');
     }
 
  function create(){
@@ -78,6 +82,10 @@ function App(){
         frames: this.anims.generateFrameNames('cats',  //usamos un metodo generateFrameNames en donde se especifica el recurso que en est ocasion seria cats
         { prefix: 'idle', end: 4}), //vendria siendo como una cadena
         repeat: -1}); // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
+
+        //SONIDOS
+        takeEat = this.sound.add('takeEat');
+        noBomb = this.sound.add('noBomb');
 
 
         // mostramos los datos en la pantalla mediante un texto
@@ -193,7 +201,7 @@ function App(){
 
         // -- CREACION DE BOMBA --
 
-        var numberProbability =  Phaser.Math.Between(2,70);
+        var numberProbability =  Phaser.Math.Between(2,20);
         if (numberProbability <= probabilityBomb) {
           var verBomba = bombBomb.get();
           if (verBomba) {
@@ -218,6 +226,7 @@ function App(){
           eat.killAndHide(eatCat);
           eatCat.setActive(false);
           eatCat.setVisible(false);
+          takeEat.play();
           puntaje += 20; //El puntaje aumentara de 20 en 20
         }
         this.actualizarTexto('Score'); //Actualizaremos el Score
@@ -231,6 +240,7 @@ function App(){
           bombBomb.killAndHide(verBomba);
           verBomba.setActive(false);
           verBomba.setVisible(false);
+          noBomb.play();
           if (vida > 0) { //Se agrega este condicional para evitar que la vida sea negativa
             vida --; //Restaremos de 1 en 1 la vida 
           }
