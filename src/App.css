@@ -1,38 +1,116 @@
-.App {
+*{
+  margin: 0px;
+  padding: 0px;
+ 
+}
+
+body{
+  background-image: url(./img/fondo2.png);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+ 
+.cards{
+  width: 12%;
+  
+  margin: 40px;
+  background-color: rgb(251, 250, 252);
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgb(223, 90, 183);
+  display: inline-block;
+  margin-left: 100px;
+}
+
+.cards:hover{
+  transform: translateY(-3%);
+}
+
+.cards2{
+  width: 12%;
+  margin: 40px;
+  
+  background-color: rgb(251, 250, 252);
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgb(142, 61, 180);
+  display: inline-block;
+   margin-top: 200px; 
+}
+
+.cards2:hover{
+  transform: translateY(-3%);
+}
+
+.cards3{
+  width: 12%;
+  margin: 40px;
+  background-color: rgb(251, 250, 252);
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgb(103, 171, 216);
+  display: inline-block;
+  
+}
+
+.cards3:hover{
+  transform: translateY(-3%);
+}
+
+.cards4{
+  width: 12%;
+  margin: 40px;
+  background-color: rgb(251, 250, 252);
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgb(248, 164, 67);
+  display: inline-block;
+   
+}
+
+.cards4:hover{
+  transform: translateY(-3%);
+}
+
+.cards5{
+  width: 12%;
+  margin: 40px;
+  background-color: rgb(251, 250, 252);
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgb(75, 197, 96);
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.cards5:hover{
+  transform: translateY(-3%);
+}
+
+.imagen{
+    
+  width:  100%;
+  height: 100%;
+  border-radius: 5px;
+  
+}
+
+.titulo{
   text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: rgb(68, 68, 68);
+  margin-top: 15px;
+}
+ 
+button{
+  margin-top: 15px;
+  margin-bottom: 30px;
+  margin-left: 55px;
+  background-color: rgb(79, 77, 80);
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover{
+  background-color: rgb(197, 82, 188);
+  color:rgb(53, 52, 52);
+  transition: 3s;
 }
