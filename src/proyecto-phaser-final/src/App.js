@@ -20,7 +20,8 @@ function App(){
       extend: {
         generateEat:generateEat,
         colisionCatComida:colisionCatComida,
-        colisionCatBomb:colisionCatBomb
+        colisionCatBomb:colisionCatBomb,
+        actualizarTexto:actualizarTexto
       }
     }
   };  
@@ -30,6 +31,7 @@ function App(){
   var cat;
   var eat;
   var bombBomb;
+  var text;
 
   //Agregacion de constantes
     
@@ -39,6 +41,9 @@ function App(){
     var velocidadEat = 4;
     var TimeReturnEat = 600;
     var probabilityBomb = 50; //Probabilidad de que aparezca una bomba del 50%
+    var vida = 3;
+    var puntaje = 0;
+    var nivel = 0;
 
     function preload(){
         //realizo una carga de imagenes para usarlo despues
@@ -71,20 +76,10 @@ function App(){
         repeat: -1}); // se utiliza el repeat en menos 1 para que se repita indefinidamente el movimiento
 
 
-        //CREACION DE VIDA Y PUNTAJE EN EL NIVEL
-
-        this.data.set('lives', 3);
-        this.data.set('level', 1);
-        this.data.set('score', 0);
-        
         // mostramos los datos en la pantalla mediante un texto
-        var text = this.add.text(10, 10, '', { font: '24px Courier', fill: '#00ff00' });
+        text = this.add.text(10, 10, '', { font: '24px Courier', fill: '#00ff00' });
+        this.actualizarTexto(); //Llamamos a la funcion actualizarTexto
 
-        text.setText([
-          'Level: ' + this.data.get('level'),
-          'Lives: ' + this.data.get('lives'),
-          'Score: ' + this.data.get('score')
-      ]);
         // agrego fisicas al componente cat
         cat = this.physics.add.sprite(300,450,'cat',); 
         
@@ -104,13 +99,13 @@ function App(){
         eat = this.physics.add.group({ 
         defaultKey: 'eat', //Carga del sprite de comida
         frame: 0, //El numero de frame 
-        maxSize:100 //Cantidad de comida que podran almacenarse al mismo tiempo
+        maxSize:600 //Cantidad de comida que podran almacenarse al mismo tiempo
        });
 
        //Creamos un nuevo grupo
         bombBomb = this.physics.add.group({ 
         defaultKey: 'bomb', //Carga de la imagen de la bomba
-        maxSize:50 //Cantidad de bombas que podran almacenarse al mismo tiempo
+        maxSize:70 //Cantidad de bombas que podran almacenarse al mismo tiempo
        });
 
 
@@ -223,11 +218,25 @@ function App(){
       //Colision de la bomba con el gato
 
 
-      function colisionCatBomb(cat,verBomba){
-        bombBomb.killAndHide(verBomba);
-        verBomba.setActive(false);
-        verBomba.setVisible(false);
+      function colisionCatBomb(cat,verBomba){ //Cuando el gato colisione con la bomba ...
+        if (verBomba.active) {//Y si y solo si la bomba se encuentra activa , entonces pasara esto...
+          bombBomb.killAndHide(verBomba);
+          verBomba.setActive(false);
+          verBomba.setVisible(false);
+          vida --; //Restaremos de 1 en 1 la vida 
+          this.actualizarTexto(); //LLamaremos a la funcion actualizarTexto
+        }
       }
+
+      function actualizarTexto(){
+        text.setText([
+          'Level:' + nivel,
+          'Lives:'+ vida,
+          'Score:'+ puntaje
+      ]);
+
+      }
+
     }
         
     
