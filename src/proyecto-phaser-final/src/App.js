@@ -132,6 +132,7 @@ function App(){
        }
 
       else{
+        
         cat.setVelocityX(0); //la velocidad se convierte en nula o cero
         cat.anims.play('idle',true); // i no entra en ninguna condicional iniciamos la animacion idle
         cat.flipX = 0;
