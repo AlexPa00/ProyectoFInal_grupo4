@@ -37,7 +37,7 @@ function App(){
   var bombBomb;
   var text;
   var takeEat;
-  var noBomb;
+  var error;
   var nivel1;
 
   //Agregacion de constantes
@@ -60,7 +60,7 @@ function App(){
         this.load.image('bomb','images/bomb.png');
         this.load.atlas('cats','/images/idle1.png','/images/idlesprites.json');
         this.load.audio('takeEat','/sounds/Eat1.mp3');
-        this.load.audio('noBomb','/sounds/Bomb1.mp3');
+        this.load.audio('error','/sounds/ERRORBOMB1.mp3');
         this.load.audio('nivel1','/sounds/Nivel1Music.mp3');
     }
 
@@ -87,7 +87,7 @@ function App(){
 
         //SONIDOS
         takeEat = this.sound.add('takeEat');
-        noBomb = this.sound.add('noBomb');
+        error = this.sound.add('error');
         nivel1 = this.sound.add('nivel1');
         nivel1.loop = true;
         nivel1.play();
@@ -243,7 +243,7 @@ function App(){
           bombBomb.killAndHide(verBomba);
           verBomba.setActive(false);
           verBomba.setVisible(false);
-          noBomb.play();
+          error.play();
           if (vida > 0) { //Se agrega este condicional para evitar que la vida sea negativa
             vida --; //Restaremos de 1 en 1 la vida 
           }
