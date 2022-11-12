@@ -223,7 +223,9 @@ function App(){
           bombBomb.killAndHide(verBomba);
           verBomba.setActive(false);
           verBomba.setVisible(false);
-          vida --; //Restaremos de 1 en 1 la vida 
+          if (vida > 0) { //Se agrega este condicional para evitar que la vida sea negativa
+            vida --; //Restaremos de 1 en 1 la vida 
+          }
           this.actualizarTexto(); //LLamaremos a la funcion actualizarTexto
         }
       }
