@@ -72,7 +72,7 @@ function App(){
         eat = this.physics.add.group({ //Creamos un nuevo grupo
         defaultKey: 'eat', //Carga del sprite de comida
         frame: 0, //El numero de frame 
-        maxSize:100 //Cantidad de comida que podran almacenarse al mismo tiempo
+        maxSize:1000 //Cantidad de comida que podran almacenarse al mismo tiempo
        });
 
        bombBomb = this.physics.add.group({ //Creamos un nuevo grupo
