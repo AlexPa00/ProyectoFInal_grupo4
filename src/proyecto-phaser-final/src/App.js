@@ -1,3 +1,4 @@
+
 import Phaser from "phaser";
 //import { Game } from "./game";
 
@@ -25,6 +26,9 @@ function App(){
       }
     }
   };  
+
+
+
   var game = new Phaser.Game(config);
 
   
@@ -209,10 +213,14 @@ function App(){
 
       //Colision de la comida con el gato
 
-      function colisionCatComida(cat,eatCat){
-        eat.killAndHide(eatCat);
-        eatCat.setActive(false);
-        eatCat.setVisible(false);
+      function colisionCatComida(cat,eatCat){ //Cuando el gato colisione con la comida ...
+        if (eatCat.active) { //Y si y solo si la comida se encuentra activa , entonces pasara esto...
+          eat.killAndHide(eatCat);
+          eatCat.setActive(false);
+          eatCat.setVisible(false);
+          puntaje += 20; //El puntaje aumentara de 20 en 20
+        }
+        this.actualizarTexto('Score'); //Actualizaremos el Score
       }
 
       //Colision de la bomba con el gato
@@ -226,7 +234,7 @@ function App(){
           if (vida > 0) { //Se agrega este condicional para evitar que la vida sea negativa
             vida --; //Restaremos de 1 en 1 la vida 
           }
-          this.actualizarTexto(); //LLamaremos a la funcion actualizarTexto
+          this.actualizarTexto('Lives'); //Actualizaremos la vida
         }
       }
 
