@@ -38,6 +38,7 @@ function App(){
   var text;
   var takeEat;
   var noBomb;
+  var nivel1;
 
   //Agregacion de constantes
     
@@ -60,6 +61,7 @@ function App(){
         this.load.atlas('cats','/images/idle1.png','/images/idlesprites.json');
         this.load.audio('takeEat','/sounds/Eat1.mp3');
         this.load.audio('noBomb','/sounds/Bomb1.mp3');
+        this.load.audio('nivel1','/sounds/Nivel1Music.mp3');
     }
 
  function create(){
@@ -86,6 +88,9 @@ function App(){
         //SONIDOS
         takeEat = this.sound.add('takeEat');
         noBomb = this.sound.add('noBomb');
+        nivel1 = this.sound.add('nivel1');
+        nivel1.loop = true;
+        nivel1.play();
 
 
         // mostramos los datos en la pantalla mediante un texto
@@ -176,9 +181,7 @@ function App(){
 });*/
 
      
-}
-            
-            
+     }          
        // -- CREACION DE COMIDA --
 
         function generateEat() {
