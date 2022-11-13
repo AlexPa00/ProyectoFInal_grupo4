@@ -4,15 +4,22 @@ import imagen2  from "./img/JuegoComida1.png";
 import imagen3 from "./img/Arkkanoid.png";
 import imagen4  from "./img/PiedraPapel.png";
 import imagen5 from "./img/Memoria.png";
- 
+import {Link} from 'react-router-dom';
  
 import './App.css';
 
 function App() {
-  
+ 
     return(
 
+      
         <main > 
+ 
+ <div className="Centro">
+            <h2 className="Titulo2">Bienvenido</h2>
+             <button className='button'> COLABORADORES </button>
+           
+        </div>
  
  <div className="cards">  
        
@@ -20,7 +27,7 @@ function App() {
      
  <h1 className="titulo">Ahorcadito</h1>
 
-<button> Jugar </button>
+  <button> Jugar </button>
 
 </div>
 
