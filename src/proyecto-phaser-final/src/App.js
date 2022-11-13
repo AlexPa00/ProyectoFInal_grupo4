@@ -1,5 +1,7 @@
-
 import Phaser from "phaser";
+import {Menu} from "./menu"
+import {GameOver} from "./gameOver"
+import {Win} from "./win"
 //import { Game } from "./game";
 
 
@@ -29,9 +31,14 @@ function App(){
 
 
 
+
   var game = new Phaser.Game(config);
 
-  
+  game.scene.add("menu",Menu);
+  game.scene.add("gameOver",GameOver);
+  game.scene.add("win",Win);
+  game.scene.start("menu");
+
   var cat;
   var eat;
   var bombBomb;
@@ -181,7 +188,11 @@ function App(){
 });*/
 
      
-     }          
+     } 
+     
+     
+ 
+
        // -- CREACION DE COMIDA --
 
         function generateEat() {
@@ -202,7 +213,7 @@ function App(){
          }
         }
 
-        // -- CREACION DE BOMBA --
+        // - - CREACION DE BOMBA --
 
         var numberProbability =  Phaser.Math.Between(2,20);
         if (numberProbability <= probabilityBomb) {
@@ -232,6 +243,10 @@ function App(){
           takeEat.play();
           puntaje += 20; //El puntaje aumentara de 20 en 20
         }
+        if(puntaje==60){ //de prueba
+          game.scene.start("win");
+
+        }
         this.actualizarTexto('Score'); //Actualizaremos el Score
       }
 
@@ -247,6 +262,11 @@ function App(){
           if (vida > 0) { //Se agrega este condicional para evitar que la vida sea negativa
             vida --; //Restaremos de 1 en 1 la vida 
           }
+          if(vida==0){//de prueba
+          
+            game.scene.start("gameOver");
+
+          }
           this.actualizarTexto('Lives'); //Actualizaremos la vida
         }
       }
@@ -260,9 +280,10 @@ function App(){
 
       }
 
+
+
     }
         
-    
-
+     
 
 export default App;
