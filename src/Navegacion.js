@@ -2,7 +2,7 @@ import React from "react";
 import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 import '../Navegacion.css';
 import Inicio from "./App";
-import Ahorcadito from "./ahorcadito/src/componentes/Inicio";
+import Ahorcadito from "../ahorcadito/src/componentes/Inicio";
 import AtrapaComida from "./proyecto-phaser-final/src/game"
 import Arkkanoid from "./ArkanoidGame/game";
 import PiPaTi from "./PiedraPapelTijera_GRUPO4-main/src/components/game";
@@ -13,7 +13,7 @@ class Navegacion extends React.Component{
     return(
         <>
      <BrowserRouter>
-        <div className="PaginaPrincipal">
+        <div className="PaginaPrincipal"> 
             <h1 className="Titulo">MenuPrincipal</h1>
             <nav>  
             <Link to ='/' className = "Boton" >Inicio</Link>
