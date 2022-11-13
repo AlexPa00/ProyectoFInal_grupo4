@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 //import App from "./App";
 import reportWebVitals from './reportWebVitals';
-import GameMemory from './JuegoDeMemoria/GameMemory';//juego
+import App from "./App";
 import "font-awesome/css/font-awesome.css"//iconosdecartas
 
 //instalar 
@@ -14,7 +14,7 @@ import "font-awesome/css/font-awesome.css"//iconosdecartas
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <GameMemory />
+    <App />
   
 );
 
