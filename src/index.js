@@ -5,7 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import GameMemory from './JuegoDeMemoria/GameMemory';//juego
 import "font-awesome/css/font-awesome.css"//iconosdecartas
-import App from "./proyecto-phaser-final/src/App"
+
 //instalar 
 //npm install font-awesome
 //npm install lodash.shuffle
@@ -14,7 +14,7 @@ import App from "./proyecto-phaser-final/src/App"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <App />
+    <GameMemory />
   
 );
 
