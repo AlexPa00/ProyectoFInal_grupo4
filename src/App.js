@@ -5,6 +5,7 @@ import imagen3 from "./img/Arkkanoid.png";
 import imagen4  from "./img/PiedraPapel.png";
 import imagen5 from "./img/Memoria.png";
  
+ 
 import './App.css';
 
 function App() {
