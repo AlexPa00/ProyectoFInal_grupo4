@@ -1,17 +1,14 @@
-var click;
-
-export class ButtonLvl1{
+export class RestartButtonLevel1{
     constructor(scene){
         this.relatedScene=scene;
     }
     preload(){
-        this.relatedScene.load.image("buttonlvl1","imagesGamePhaser/select1.png");
+        this.relatedScene.load.image("button","imagesGamePhaser/reintentar.png" ,{Width:50});
     }
     create(){
-        this.startButton=this.relatedScene.add.image(270,390,"buttonlvl1").setInteractive();
+        this.startButton=this.relatedScene.add.image(540,250,"button").setInteractive();
         this.startButton.on("pointerdown",()=>{
             this.relatedScene.scene.start("Game1");
-
         });
     }
 }

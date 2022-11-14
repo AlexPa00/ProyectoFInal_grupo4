@@ -5,6 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from "./App";
 import "font-awesome/css/font-awesome.css"//iconosdecartas
+import Navegacion from './Navegacion';
 
 //instalar 
 //npm install font-awesome
@@ -14,7 +15,7 @@ import "font-awesome/css/font-awesome.css"//iconosdecartas
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <App />
+    <Navegacion />
   
 );
 
