@@ -3,7 +3,7 @@ export class RestartButtonLevel2{
         this.relatedScene=scene;
     }
     preload(){
-        this.relatedScene.load.image("button1","Images/CatFoodRain/Images/CatFoodRain/imagesGamePhaserCAT/reintentar.png" ,{Width:50});
+        this.relatedScene.load.image("button1","/Images/CatFoodRain/imagesGamePhaserCAT/reintentar.png" ,{Width:50});
     }
     create(){
         this.startButton=this.relatedScene.add.image(540,250,"button1").setInteractive();

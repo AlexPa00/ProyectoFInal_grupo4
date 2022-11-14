@@ -3,7 +3,7 @@ export class RestartButton{
         this.relatedScene=scene;
     }
     preload(){
-        this.relatedScene.load.image("button","images/AkanoidImages/retry.png" ,{Width:50});//revisar
+        this.relatedScene.load.image("button","Images/ArkanoidImages/retry.png" ,{Width:50});
     }
     create(){
         this.startButton=this.relatedScene.add.image(325,600,"button").setInteractive();

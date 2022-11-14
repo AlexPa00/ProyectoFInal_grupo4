@@ -11,8 +11,11 @@ function Ark(){
   useEffect(() => {
   var config = {
     type: Phaser.AUTO,
+    scale:{
+  autoCenter:Phaser.Scale.CENTER_HORIZONTALLY,
     width: 650,
-    height: 692,
+    height: 692,},
+    
     scene:[Menu,Game,GameDos,GameOver,Win],    
     physics: {
         default: 'arcade',

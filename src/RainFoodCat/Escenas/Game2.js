@@ -26,6 +26,7 @@ import Phaser from "phaser";
     Extends: Phaser.Scene,
   
     initialize:
+    
   
         function Game2() {
             Phaser.Scene.call(this, { key: 'Game2' });
@@ -258,4 +259,4 @@ import Phaser from "phaser";
 
         
     },
-});  
+}); 

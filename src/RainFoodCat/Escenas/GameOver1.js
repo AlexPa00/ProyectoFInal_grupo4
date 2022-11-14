@@ -9,9 +9,9 @@ export class GameOver1 extends Phaser.Scene{
 
     preload(){
 
-      this.load.image("gameOver","Images/CatFoodRain/imagesGamePhaser/Over.png");
+      this.load.image("gameOver","Images/CatFoodRain/imagesGamePhaserCAT/Over.png");
 
-        this.load.image('backgroundGO','Images/CatFoodRain/imagesGamePhaser/gameOverr.png');
+        this.load.image('backgroundGO','Images/CatFoodRain/imagesGamePhaserCAT/gameOverr.png');
         this.load.audio('fail','/sounds/Catsounds/GO1.mp3');
 
         this.restartButtonLevel1.preload();
