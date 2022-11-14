@@ -27,7 +27,7 @@ function App() {
      
  <h1 className="titulo">Ahorcadito</h1>
 
-  <button> Jugar </button>
+ <Link to ='/Ahorcadito' className = "button" >ahorcadito</Link>
 
 </div>
 
@@ -38,7 +38,7 @@ function App() {
            
        <h1 className="titulo">AtrapaComida</h1>
       
-      <button> Jugar </button>
+       <Link to ='/AtrapaComida' className = "button" >AtrapaComida</Link>
       
       </div>
 
@@ -48,7 +48,7 @@ function App() {
            
        <h1 className="titulo">Arkkanoid</h1>
       
-      <button> Jugar </button>
+       <Link to ='/Arkkanoid' className = "button" >Arkkanoid</Link>
       
       </div>
 
@@ -56,9 +56,9 @@ function App() {
        
        <img src=  {imagen4} alt="" className="imagen" /> 
            
-       <h1 className="titulo">Pi Pa Ti</h1>
+       <h1 className="titulo">PiedraPapelTijera</h1>
       
-      <button> Jugar </button>
+       <Link to ='/PiPaTi' className = "button" >Pied-Papel-Tij</Link>
       
       </div>
 
@@ -68,7 +68,7 @@ function App() {
            
        <h1 className="titulo">Memoria</h1>
       
-      <button> Jugar </button>
+       <Link to ='/JuegoMemoria' className = "button" >JuegoMemoria</Link>
       
       </div>
 
