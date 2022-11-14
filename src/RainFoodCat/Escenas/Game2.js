@@ -40,7 +40,7 @@ import Phaser from "phaser";
             this.load.atlas('cats','/Images/CatFoodRain/Catimages/idle1.png','/Images/CatFoodRain/Catimages/idlesprites.json');
             this.load.audio('takeEat','/sounds/Catsounds/Eat1.mp3');
             this.load.audio('error','/sounds/Catsounds/ERRORBOMB1.mp3');
-            this.load.audio('nivel2','/sounds/CatsoundsNivel2.0.mp3');
+            this.load.audio('nivel2','/sounds/Catsounds/Nivel2.0.mp3');
         },
     
          create(){
