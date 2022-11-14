@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 //import App from "./App";
 import reportWebVitals from './reportWebVitals';
-import App from "./App";
+//import App from "./App";
 import "font-awesome/css/font-awesome.css"//iconosdecartas
 import Navegacion from './Navegacion';
+/*import DudeGame from './Dude/DudeGame';//nice very nice
+import Aho from './ahorcadito/Aho';//le falta una imagen xdd
+import Ark from "./ArkanoidGame/Ark";//REVISAR ESCENA DE WIN
+import GameMemory from "./JuegoDeMemoria/GameMemory";//goood
+import PPT from './PiedraPapelTijera/components/PPT';//le falta direccionar los iconos de pidera papel y tijera
+import CatRain from './RainFoodCat/CatRain';//FALTA LEVEL 2*/
 
-//instalar 
-//npm install font-awesome
-//npm install lodash.shuffle
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
