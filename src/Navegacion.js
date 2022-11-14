@@ -5,16 +5,11 @@ import App from "./App";
 
 import DudeGame from './Dude/DudeGame';//nice very nice
 import Aho from './ahorcadito/Aho';//le falta una imagen xdd
-import Ark from "./ArkanoidGame/Ark";//REVISAR ESCENA DE WIN
+import Ark from "./ArkanoidGame/Ark";
 import GameMemory from "./JuegoDeMemoria/GameMemory";//goood
-import PPT from './PiedraPapelTijera/components/PPT';//le falta direccionar los iconos de pidera papel y tijera
+import PPT from './PiedraPapelTijera/components/PPT';
 import CatRain from "./RainFoodCat/CatRain"
 
-import Ahorcadito from "./ahorcadito/src/AppAhorcadito";
-import AtrapaComida from "./proyecto-phaser-final/src/App"
-import Arkkanoid from "./ArkanoidGame/App";
-import PiedraPapelTijera from "./PiedraPapelTijera_GRUPO4-main/src/components/App";
-import JuegoMemoria from "./JuegoDeMemoria/GameMemory";
 
 
 class Navegacion extends React.Component{
@@ -37,12 +32,6 @@ class Navegacion extends React.Component{
             <Route path = "/Arkkanoid" element= {<Ark/>}/>
             <Route path = "/PiPaTi" element= {<PPT/>}/>
             <Route path = "/JuegoMemoria" element= {<GameMemory/>}/>
-
-            <Route path = "/Ahorcadito" element= {<Ahorcadito/>}/>
-            <Route path = "/AtrapaComida" element= {<AtrapaComida/>}/>
-            <Route path = "/Arkkanoid" element= {<Arkkanoid/>}/>
-            <Route path = "/PiedraPapelTijera" element= {<PiedraPapelTijera/>}/>
-            <Route path = "/JuegoMemoria" element= {<JuegoMemoria/>}/>
 
         </Routes>
      </BrowserRouter>
