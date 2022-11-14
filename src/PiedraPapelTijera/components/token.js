@@ -78,7 +78,7 @@ function Token({ name = 'default', onClick,isShadowAnimated = false, playing }) 
     return(
         <TokenStyled  color={color} onClick={handleClick} name={name} isShadowAnimated={isShadowAnimated} playing={playing}>
             <div className="box">
-            <img src={`./images/${name}.ico`} alt="" />
+            <img src={`./Images/PiPaTiImages/${name}.ico`} alt="" />
             </div>     
         </TokenStyled>
     )
