@@ -10,10 +10,10 @@ import GameMemory from "./JuegoDeMemoria/GameMemory";//goood
 import PPT from './PiedraPapelTijera/components/PPT';//le falta direccionar los iconos de pidera papel y tijera
 import CatRain from "./RainFoodCat/CatRain"
 
-import Ahorcadito from "./ahorcadito/src/AppAhorcadito";
-import AtrapaComida from "./proyecto-phaser-final/src/App"
-import Arkkanoid from "./ArkanoidGame/App";
-import PiedraPapelTijera from "./PiedraPapelTijera_GRUPO4-main/src/components/App";
+import Ahorcadito from "./ahorcadito/AppAhorcadito";
+import AtrapaComida from "./RainFoodCat/CatRain";
+import Arkkanoid from "./ArkanoidGame/Ark";
+import PiedraPapelTijera from "./PiedraPapelTijera/components/Jugar";
 import JuegoMemoria from "./JuegoDeMemoria/GameMemory";
 
 

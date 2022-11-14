@@ -204,7 +204,7 @@ export default class Aho extends Component {
       <Appstyled>
       <div>
         <header>
-          <h1 className="title">AHORCADITO<img src="img/ahorcado.jpg" alt="logo" title="logo" /></h1>
+          <h1 className="title">AHORCADITO<img src=".//" alt="logo" title="logo" /></h1>
         </header>
 
         <Palabra palabra={this.state.palabra} listaLetras={this.state.letras} frase={this.state.frase} fallos={this.state.fallos} />
