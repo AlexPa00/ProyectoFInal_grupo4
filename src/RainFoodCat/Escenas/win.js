@@ -9,7 +9,7 @@ export class Win extends Phaser.Scene{
     preload(){
         //this.load.audio('winner', 'sounds/tadda.ogg');
         this.load.image("winn","imagesGamePhaser/winneryou.png");
-         this.load.image('backgroundW','imagesGamePhaser/Win.png');
+         this.load.image('backgroundW','/');
          this.load.audio('musicWin','/sounds/Win.1.mp3');
 
         this.restartButton.preload();

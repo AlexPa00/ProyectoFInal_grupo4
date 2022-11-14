@@ -16,7 +16,7 @@ function App() {
  
  <div className="Centro">
             <h2 className="Titulo2">Bienvenido</h2>
-             <button className='button'> COLABORADORES </button>
+             <Link to = '/'><button className='button'> COLABORADORES </button></Link>
            
         </div>
  
