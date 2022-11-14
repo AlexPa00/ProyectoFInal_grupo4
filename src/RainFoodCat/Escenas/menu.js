@@ -1,6 +1,6 @@
 import Phaser from "phaser";
-import { ButtonLvl1 } from "./components/buttonlvl1.js";
-import { ButtonLvl2 } from "./components/buttonlvl2.js";
+import { ButtonLvl1 } from "../components/buttonlvl1.js";
+import { ButtonLvl2 } from "../components/buttonlvl2.js";
 export class Menu extends Phaser.Scene{
     constructor(){
         super({key:'menu'});     
@@ -9,15 +9,15 @@ export class Menu extends Phaser.Scene{
     }
 
     preload(){
-        this.load.image('backgroundM','images/ArkanoidImages/FondoMenu.png');
-        this.load.image('tittle','images/ArkanoidImages/arkanoid.png');
+        this.load.image('backgroundM','Images/CatFoodRain/imagesGamePhaserCAT/menu.png');
+        this.load.image('tittle','Images/CatFoodRain/imagesGamePhaserCAT/Titulo.png');
         this.buttonLvl1.preload();
         this.buttonLvl2.preload();
         
         }
     create(){
-        this.add.image(325,346,'backgroundM');
-        this.add.image(325,200,'tittle');
+        this.add.image(300,240,'backgroundM');
+        this.add.image(300,70,'tittle');
         this.buttonLvl1.create();
         this.buttonLvl2.create();
      

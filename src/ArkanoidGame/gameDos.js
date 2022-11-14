@@ -12,27 +12,27 @@ export class GameDos extends Phaser.Scene{
 
     preload(){
         // realizo una precarga de las imagenes
-        this.load.image('background','images/Fondo.png');
-        this.load.image('player','images/VausSpacecraftLarge.png');
-        this.load.image('ball','images/EnergyBall.png');
-        this.load.image('bluewall', 'images/BlueWall.png');
-        this.load.image('pinkwall', 'images/PinkWall.png');
-        this.load.image('greenwall', 'images/GreenWall.png');
-        this.load.image('lightbluewall', 'images/LightBluewall.png');
-        this.load.image('orangewall', 'images/OrangeWall.png');
-        this.load.image('goldwall', 'images/GoldWall.png');
-        this.load.image('redwall', 'images/RedWall.png');
-        this.load.image('silverwall', 'images/SilverWall.png');
-        this.load.image('whitewall', 'images/WhiteWall.png');
-        this.load.image('yellowwall', 'images/YellowWall.png');
+        this.load.image('background','images/ArkanoidImages/Fondo.png');
+        this.load.image('player','images/ArkanoidImages/VausSpacecraftLarge.png');
+        this.load.image('ball','images/ArkanoidImages/EnergyBall.png');
+        this.load.image('bluewall', 'images/ArkanoidImages/BlueWall.png');
+        this.load.image('pinkwall', 'images/ArkanoidImages/PinkWall.png');
+        this.load.image('greenwall', 'images/ArkanoidImages/GreenWall.png');
+        this.load.image('lightbluewall', 'images/ArkanoidImages/LightBluewall.png');
+        this.load.image('orangewall', 'images/ArkanoidImages/OrangeWall.png');
+        this.load.image('goldwall', 'images/ArkanoidImages/GoldWall.png');
+        this.load.image('redwall', 'images/ArkanoidImages/RedWall.png');
+        this.load.image('silverwall', 'images/ArkanoidImages/SilverWall.png');
+        this.load.image('whitewall', 'images/ArkanoidImages/WhiteWall.png');
+        this.load.image('yellowwall', 'images/ArkanoidImages/YellowWall.png');
 
 
         //carga de los audios para el juego
-        this.load.audio('platformimpactsample', 'sounds/platform-impact.ogg');
-        this.load.audio('brickimpactsample', 'sounds/brick-impact.ogg');
-        this.load.audio('gameoversample', 'sounds/gameover.ogg');
-        this.load.audio('winsample', 'sounds/you_win.ogg');
-        this.load.audio('startgamesample', 'sounds/start-game.ogg');
+        this.load.audio('platformimpactsample', 'sounds/ArkanoidSounds/platform-impact.ogg');
+        this.load.audio('brickimpactsample', 'sounds/ArkanoidSounds/brick-impact.ogg');
+        this.load.audio('gameoversample', 'sounds/ArkanoidSounds/gameover.ogg');
+        this.load.audio('winsample', 'sounds/ArkanoidSounds/you_win.ogg');
+        this.load.audio('startgamesample', 'sounds/ArkanoidSounds/start-game.ogg');
         
         }
     create(){

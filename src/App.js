@@ -1,9 +1,8 @@
-import logo from './logo.svg';
-import imagen1 from "./img/AHORCADITO1.png";
-import imagen2  from "./img/JuegoComida1.png";
-import imagen3 from "./img/Arkkanoid.png";
-import imagen4  from "./img/PiedraPapel.png";
-import imagen5 from "./img/Memoria.png";
+import imagen1 from "./MenuImages/AHORCADITO1.png";
+import imagen2  from "./MenuImages/JuegoComida1.png";
+import imagen3 from "./MenuImages/Arkkanoid.png";
+import imagen4  from "./MenuImages/PiedraPapel.png";
+import imagen5 from "./MenuImages/Memoria.png";
 import {Link} from 'react-router-dom';
  
 import './App.css';
